@@ -2,7 +2,10 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Stuntguard" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<!--        <item name="colorPrimary">@null</item> &lt;!&ndash; HERE &ndash;&gt;-->
+                 <item name="colorPrimary">@color/primary</item>
+                 <item name="colorSecondary">@color/whitesecondary</item>
+
     </style>
 
     <style name="Theme.Stuntguard" parent="Base.Theme.Stuntguard" />
