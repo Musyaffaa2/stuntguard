@@ -17,10 +17,4 @@
         android:textColor="@color/white"
         android:textSize="20sp" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="299dp"
-        android:layout_height="288dp"
-        android:src="@drawable/profile_icon" />
-
 </FrameLayout>
