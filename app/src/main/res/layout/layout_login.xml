@@ -32,7 +32,6 @@
         android:fontFamily="@font/sfuidisplatreguler"
         android:text="Forgot Password?"
         android:textColor="#FFFF"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextpassword" />
@@ -50,7 +49,7 @@
         android:drawablePadding="15dp"
         android:ems="10"
         android:fontFamily="@font/sfuidisplatreguler"
-        android:hint="Username"
+        android:hint="Email"
         android:inputType="text"
         android:paddingHorizontal="24dp"
         android:textColor="@color/white"
@@ -108,7 +107,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <Button
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
