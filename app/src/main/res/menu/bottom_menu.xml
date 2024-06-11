@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home_icon"
+        android:title="Home"
+        android:background="@drawable/nav_item_background"
+        android:iconTint="@color/nav_item_color"/>
+    <item
+        android:id="@+id/article"
+        android:icon="@drawable/article_icon"
+        android:title="Article"
+        android:background="@drawable/nav_item_background"
+        android:iconTint="@color/nav_item_color"/>
+    <item
+        android:id="@+id/monitor"
+        android:icon="@drawable/monitor_icon"
+        android:title="Monitor"
+        android:background="@drawable/nav_item_background"
+        android:iconTint="@color/nav_item_color"/>
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/profile_icon"
+        android:title="Profile"
+        android:background="@drawable/nav_item_background"
+        android:iconTint="@color/nav_item_color"/>
+</menu>

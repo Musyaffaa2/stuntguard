@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Semi-circle background -->
+    <item
+        android:top="24dp"
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="0dp">
+        <shape>
+            <size android:height="18dp"/>
+            <solid android:color="@android:color/transparent"/>
+            <corners android:bottomLeftRadius="18dp" android:bottomRightRadius="18dp"/>
+        </shape>
+    </item>
+    <!-- Original icon background (to keep it transparent or original) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent"/>
+        </shape>
+    </item>
+</layer-list>
