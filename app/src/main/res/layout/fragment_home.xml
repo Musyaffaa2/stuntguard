@@ -20,7 +20,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="200dp"
         android:fontFamily="@font/sfuidisplay_light"
         android:text="Welcome to Growth Journey!"
         android:textSize="17dp"
@@ -63,14 +63,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/monitorButton"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintVertical_bias="0.26" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/profileButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="4dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="8dp"
         android:background="@drawable/button_home"
         android:fontFamily="@font/sfuidisplatreguler"
         android:paddingVertical="16dp"
@@ -83,7 +83,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/articleButton"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintVertical_bias="0.254" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/monitorButton"
@@ -104,13 +104,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintVertical_bias="0.26" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/childButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/button_home"
         android:fontFamily="@font/sfuidisplatreguler"
         android:paddingVertical="16dp"
@@ -122,10 +124,21 @@
         app:iconSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintHorizontal_bias="0.23"
         app:layout_constraintStart_toEndOf="@+id/profileButton"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintVertical_bias="0.254" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="42dp"
+        android:layout_height="23dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/childButton"
+        app:layout_constraintVertical_bias="0.172"
+        app:srcCompat="@drawable/frame_27__1_" />
 
     <TextView
         android:id="@+id/textView8"
@@ -136,21 +149,10 @@
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/monitorButton"
-        app:layout_constraintVertical_bias="0.07999998" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="42dp"
-        android:layout_height="23dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/childButton"
-        app:layout_constraintVertical_bias="0.100000024"
-        app:srcCompat="@drawable/frame_27__1_" />
+        app:layout_constraintVertical_bias="0.153" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
