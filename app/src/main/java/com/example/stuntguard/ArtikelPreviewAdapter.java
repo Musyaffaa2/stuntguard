@@ -5,10 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class ArtikelPreviewAdapter extends RecyclerView.Adapter<ArtikelPreviewAdapter.ViewHolder> {
@@ -20,9 +19,8 @@ public class ArtikelPreviewAdapter extends RecyclerView.Adapter<ArtikelPreviewAd
         void onArtikelClick(Artikel artikel);
     }
 
-    public ArtikelPreviewAdapter(List<Artikel> articles, OnArtikelClickListener onArtikelClickListener) {
-
-        this.artikels = articles;
+    public ArtikelPreviewAdapter(List<Artikel> artikels, OnArtikelClickListener onArtikelClickListener) {
+        this.artikels = artikels;
         this.onArtikelClickListener = onArtikelClickListener;
     }
 
@@ -36,7 +34,7 @@ public class ArtikelPreviewAdapter extends RecyclerView.Adapter<ArtikelPreviewAd
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Artikel artikel = artikels.get(position);
-        holder.imageView.setImageResource(artikel.getImageResource());
+        Glide.with(holder.imageView.getContext()).load(artikel.getImageUrl()).into(holder.imageView);
         holder.textViewTitle.setText(artikel.getTitle());
         holder.bind(artikel, onArtikelClickListener);
     }
@@ -57,13 +55,7 @@ public class ArtikelPreviewAdapter extends RecyclerView.Adapter<ArtikelPreviewAd
         }
 
         public void bind(final Artikel artikel, final OnArtikelClickListener listener) {
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    listener.onArtikelClick(artikel);
-                }
-            });
+            itemView.setOnClickListener(v -> listener.onArtikelClick(artikel));
         }
-
     }
 }

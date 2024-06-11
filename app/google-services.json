@@ -1,14 +1,13 @@
 {
   "project_info": {
-    "project_number": "668540151959",
-    "firebase_url": "https://stuntguard-e68ee-default-rtdb.firebaseio.com",
-    "project_id": "stuntguard-e68ee",
-    "storage_bucket": "stuntguard-e68ee.appspot.com"
+    "project_number": "746347925040",
+    "project_id": "stuntguard-1cd62",
+    "storage_bucket": "stuntguard-1cd62.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:668540151959:android:6a483ea1d8b634740921d2",
+        "mobilesdk_app_id": "1:746347925040:android:e7100d80c2cc35b2d2a7f5",
         "android_client_info": {
           "package_name": "com.example.stuntguard"
         }
@@ -16,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDd3PgxsHi2gwDYN9_eOJ1s0ZcCCY-rOlo"
+          "current_key": "AIzaSyAM5ou45vs0yf_4YSuYC0E0e-IrIV3usKk"
         }
       ],
       "services": {

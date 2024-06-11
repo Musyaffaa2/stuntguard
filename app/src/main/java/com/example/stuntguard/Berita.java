@@ -1,18 +1,26 @@
 package com.example.stuntguard;
 
 public class Berita {
-    private int imageResource;
+    private String imageUrl;
     private String title;
     private String content;
 
-    public Berita(int imageResource, String title, String content) {
-        this.imageResource = imageResource;
+    public Berita() {
+        // Default constructor required for calls to DataSnapshot.getValue(Berita.class)
+    }
+
+    public Berita(String imageUrl, String title, String content) {
+        this.imageUrl = imageUrl;
         this.title = title;
         this.content = content;
     }
 
-    public int getImageResource() {
-        return imageResource;
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getTitle() {
@@ -25,5 +33,9 @@ public class Berita {
 
     public String getContent() {
         return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

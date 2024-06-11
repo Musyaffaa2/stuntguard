@@ -1,28 +1,30 @@
 package com.example.stuntguard;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class BeritaPreviewAdapter extends RecyclerView.Adapter<BeritaPreviewAdapter.ViewHolder> {
 
     private List<Berita> beritas;
     private OnBeritaClickListener onBeritaClickListener;
+    private Context context;
 
     public interface OnBeritaClickListener {
         void onBeritaClick(Berita berita);
     }
 
-    public BeritaPreviewAdapter(List<Berita> beritas, OnBeritaClickListener onBeritaClickListener) {
+    public BeritaPreviewAdapter(List<Berita> beritas, OnBeritaClickListener onBeritaClickListener, Context context) {
         this.beritas = beritas;
         this.onBeritaClickListener = onBeritaClickListener;
+        this.context = context;
     }
 
     @NonNull
@@ -35,7 +37,9 @@ public class BeritaPreviewAdapter extends RecyclerView.Adapter<BeritaPreviewAdap
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Berita berita = beritas.get(position);
-        holder.imageView.setImageResource(berita.getImageResource());
+        Glide.with(context)
+                .load(berita.getImageUrl())
+                .into(holder.imageView);
         holder.textViewTitle.setText(berita.getTitle());
         holder.bind(berita, onBeritaClickListener);
     }
@@ -56,13 +60,7 @@ public class BeritaPreviewAdapter extends RecyclerView.Adapter<BeritaPreviewAdap
         }
 
         public void bind(final Berita berita, final OnBeritaClickListener listener) {
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    listener.onBeritaClick(berita);
-                }
-            });
+            itemView.setOnClickListener(v -> listener.onBeritaClick(berita));
         }
-
     }
 }
