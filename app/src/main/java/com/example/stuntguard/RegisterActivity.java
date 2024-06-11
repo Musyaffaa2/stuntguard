@@ -72,6 +72,9 @@ public class RegisterActivity extends AppCompatActivity {
                             user.updateProfile(profileUpdates).addOnCompleteListener(profileTask -> {
                                 if (profileTask.isSuccessful()) {
                                     Toast.makeText(RegisterActivity.this, "Registrasi berhasil. Anda sekarang dapat Log in.", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                    startActivity(intent);
+                                    finish();
                                 }
                             });
                         }
