@@ -1,6 +1,7 @@
 package com.example.stuntguard;
 
 public class Artikel {
+    private String key;
     private String imageUrl;
     private String title;
     private String content;
@@ -13,6 +14,14 @@ public class Artikel {
         this.imageUrl = imageUrl;
         this.title = title;
         this.content = content;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getImageUrl() {

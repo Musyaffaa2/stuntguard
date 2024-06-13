@@ -40,6 +40,22 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currUser = mAuth.getCurrentUser();
+        updateUI(currUser);
+    }
+
+    private void updateUI(FirebaseUser user) {
+        if (user != null) {
+            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Please SignIn First!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private void registerUser() {
         String email = emailEditText.getText().toString().trim();
         String username = usernameEditText.getText().toString().trim();

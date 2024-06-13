@@ -104,18 +104,14 @@ public class ArticleFragment extends Fragment implements ArtikelPreviewAdapter.O
     @Override
     public void onArtikelClick(Artikel artikel) {
         Intent intent = new Intent(getContext(), IsiArtikelActivity.class);
-        intent.putExtra("imageUrl", artikel.getImageUrl());
-        intent.putExtra("title", artikel.getTitle());
-        intent.putExtra("content", artikel.getContent());
+        intent.putExtra("key", artikel.getKey());
         startActivity(intent);
     }
 
     @Override
     public void onBeritaClick(Berita berita) {
         Intent intent = new Intent(getContext(), IsiBeritaActivity.class);
-        intent.putExtra("imageUrl", berita.getImageUrl());
-        intent.putExtra("title", berita.getTitle());
-        intent.putExtra("content", berita.getContent());
+        intent.putExtra("key", berita.getKey());
         startActivity(intent);
     }
 }
