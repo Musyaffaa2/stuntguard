@@ -1,18 +1,14 @@
 package com.example.stuntguard;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
-
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import com.bumptech.glide.Glide;
 
 public class IsiBeritaActivity extends AppCompatActivity {
 
@@ -33,16 +29,22 @@ public class IsiBeritaActivity extends AppCompatActivity {
             }
         });
 
+        // Find views
         ImageView imageView = findViewById(R.id.image);
-        TextView textView = findViewById(R.id.title);
+        TextView Title = findViewById(R.id.title);
         TextView textViewContent = findViewById(R.id.content);
 
-        int imageResId = getIntent().getIntExtra("imageResId", -1);
-        String title = getIntent().getStringExtra("title");
-        String content = getIntent().getStringExtra("content");
+        Intent intent = getIntent();
 
-        imageView.setImageResource(imageResId);
-        textView.setText(title);
+        String title = intent.getStringExtra("title");
+        String content = intent.getStringExtra("content");
+
+        Title.setText(title);
         textViewContent.setText(content);
+
+        String imageUrl = intent.getStringExtra("imageUrl");
+        Glide.with(this)
+                .load(imageUrl)
+                .into(imageView);
     }
 }
