@@ -1,41 +1,94 @@
+
 package com.example.stuntguard;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.Button;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MonitorFragment extends Fragment {
 
-    private RecyclerView recyclerView;
-    private ContainerAnakAdapter adapter;
-    private List<ContainerAnak> containerAnakList;
+    private static final int INSERT_CHILD_REQUEST = 1;
 
+    private RecyclerView recyclerView;
+    private ChildAdapter adapter;
+    private DatabaseReference databaseReference;
+
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_monitor, container, false);
 
+        Button tambahanak = view.findViewById(R.id.buttonTambahAnak);
+        tambahanak.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), InsertChildActivity.class);
+            startActivityForResult(intent, INSERT_CHILD_REQUEST);
+        });
+
         recyclerView = view.findViewById(R.id.recycleView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        // Initialize your containerAnakList
-        containerAnakList = new ArrayList<>();
-        containerAnakList.add(new ContainerAnak(1, "Abe", "Last Updated: 01/01/2022", "https://i.pinimg.com/736x/e5/51/c1/e551c1f97495380bbf0162048a8931ca.jpg", 13.7, 112.3, 50, 5));
-        containerAnakList.add(new ContainerAnak(2, "Kumar", "Last Updated: 01/01/2022", "https://i.pinimg.com/736x/9a/37/07/9a37075206ca9446f7b8b5905ae856ac.jpg", 22.5, 150, 70, 6));
-
-        // Add more items if needed
-
-        // Initialize adapter with the list
-        adapter = new ContainerAnakAdapter(getActivity(), containerAnakList);
-        recyclerView.setAdapter(adapter);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            String userId = user.getUid();
+            loadChildrenData(userId);
+        }
 
         return view;
     }
+
+    private void loadChildrenData(String userId) {
+        String url = getResources().getString(R.string.urlDatabase);
+        databaseReference = FirebaseDatabase.getInstance(url).getReference("children").child(userId);
+
+        FirebaseRecyclerOptions<Child> options =
+                new FirebaseRecyclerOptions.Builder<Child>()
+                        .setQuery(databaseReference, Child.class)
+                        .build();
+
+        adapter = new ChildAdapter(options, getContext());
+        recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if (adapter != null) {
+            adapter.startListening();
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (adapter != null) {
+            adapter.stopListening();
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == INSERT_CHILD_REQUEST && resultCode == Activity.RESULT_OK) {
+            // Perbarui RecyclerView
+            if (adapter != null) {
+                adapter.notifyDataSetChanged();
+            }
+        }
+    }
 }
+
+

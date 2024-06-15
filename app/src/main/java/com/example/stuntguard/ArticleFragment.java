@@ -71,8 +71,8 @@ public class ArticleFragment extends Fragment implements ArtikelPreviewAdapter.O
                 beritaAdapter = new BeritaPreviewAdapter(beritas, ArticleFragment.this, getContext());
                 beritaView.setAdapter(beritaAdapter);
             }
-
             @Override
+
             public void onCancelled(@NonNull DatabaseError error) {
                 // Handle possible errors.
             }

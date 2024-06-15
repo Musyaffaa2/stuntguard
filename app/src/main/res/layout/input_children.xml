@@ -6,14 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary"
-    tools:context=".MonitorFragment">
+    tools:context=".InsertChildActivity">
+
 
     <EditText
         android:id="@+id/editTextusernameChild"
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/form"
         android:drawableLeft="@drawable/user_edit"
@@ -31,7 +32,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
+    <EditText
+        android:id="@+id/editTextglLahirchild"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/form"
+        android:drawableEnd="@drawable/calendar_2"
+        android:ems="10"
+        android:focusable="false"
+        android:fontFamily="@font/sfuidisplatreguler"
+        android:hint="Date of Birth"
+        android:inputType="text"
+        android:paddingHorizontal="24dp"
+        android:textColor="@color/white"
+        android:textColorHint="#CBD2E0"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextgenderchild" />
 
+    <EditText
+        android:id="@+id/editTextheightchild"
+        android:layout_width="310dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/form"
+        android:ems="10"
+        android:fontFamily="@font/sfuidisplatreguler"
+        android:hint="Height"
+        android:inputType="text"
+        android:paddingHorizontal="24dp"
+        android:textColor="@color/white"
+        android:textColorHint="#CBD2E0"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextglLahirchild" />
 
     <EditText
         android:id="@+id/editTextWeightchild"
@@ -55,16 +98,17 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextheightchild" />
 
     <EditText
-        android:id="@+id/editTextheightchild"
+        android:id="@+id/editTextheadchild"
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/form"
+        android:drawableEnd="@drawable/info"
         android:ems="10"
         android:fontFamily="@font/sfuidisplatreguler"
-        android:hint="Height"
+        android:hint="Head Circumfence"
         android:inputType="text"
         android:paddingHorizontal="24dp"
         android:textColor="@color/white"
@@ -73,29 +117,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextglLahirchild" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextheightchild" />
 
-    <EditText
-        android:id="@+id/editTextglLahirchild"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonTambahAnak"
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/form"
-        android:drawableEnd="@drawable/calendar_2"
-        android:ems="10"
-        android:fontFamily="@font/sfuidisplatreguler"
-        android:hint="Date of Birth"
-        android:inputType="text"
-        android:paddingHorizontal="24dp"
-        android:textColor="@color/white"
-        android:textColorHint="#CBD2E0"
-        android:textSize="15dp"
+        android:background="@drawable/buttonsecondary"
+        android:fontFamily="@font/sfuitext_semibold"
+        android:text="Add"
+        android:textColor="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextgenderchild" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextheadchild" />
 
     <EditText
         android:id="@+id/editTextgenderchild"
@@ -118,43 +156,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextusernameChild" />
 
-    <EditText
-        android:id="@+id/editTextheadchild"
-        android:layout_width="310dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/form"
-        android:drawableEnd="@drawable/info"
-        android:ems="10"
-        android:fontFamily="@font/sfuidisplatreguler"
-        android:hint="Head Circumfence"
-        android:inputType="text"
-        android:paddingHorizontal="24dp"
-        android:textColor="@color/white"
-        android:textColorHint="#CBD2E0"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextheightchild" />
-
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonLogin"
-        android:layout_width="310dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/buttonInputPhoto"
+        android:layout_width="258dp"
+        android:layout_height="36dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/buttonsecondary"
         android:fontFamily="@font/sfuitext_semibold"
-        android:text="Add"
+        android:text="Input Photo"
         android:textColor="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextheadchild" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -163,7 +179,7 @@
         android:layout_marginTop="32dp"
         android:src="@drawable/group_14"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttonLogin" />
+        app:layout_constraintTop_toTopOf="@+id/buttonTambahAnak" />
 
     <TextView
         android:id="@+id/textView9"
@@ -177,13 +193,14 @@
         android:textColor="@color/white"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toEndOf="@+id/back_btn"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView5"
+    <ImageButton
+        android:id="@+id/back_btn"
         android:layout_width="39dp"
         android:layout_height="31dp"
+        android:backgroundTint="@color/primary"
         android:layout_marginStart="44dp"
         android:layout_marginTop="32dp"
         android:src="@drawable/frame"
