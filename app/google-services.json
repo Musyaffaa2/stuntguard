@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "746347925040",
+    "firebase_url": "https://stuntguard-1cd62-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "stuntguard-1cd62",
     "storage_bucket": "stuntguard-1cd62.appspot.com"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.example.stuntguard"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "746347925040-t2ariims321r06v6hpp7s46lr12rdb3p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.stuntguard",
+            "certificate_hash": "899763dcb572270c7081abb1ede7e88aafe27019"
+          }
+        },
+        {
+          "client_id": "746347925040-pgscuoqh1ihdusnidtb2m6hb4lcm14di.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAM5ou45vs0yf_4YSuYC0E0e-IrIV3usKk"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "746347925040-pgscuoqh1ihdusnidtb2m6hb4lcm14di.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
