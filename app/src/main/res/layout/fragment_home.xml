@@ -10,7 +10,7 @@
         android:id="@+id/imageView"
         android:layout_width="430dp"
         android:layout_height="420dp"
-        android:layout_marginTop="-10dp"
+        android:layout_marginTop="-60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="140dp"
         android:fontFamily="@font/sfuidisplay_light"
         android:text="Welcome to Growth Journey!"
         android:textSize="17dp"
@@ -49,7 +49,7 @@
         android:id="@+id/articleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="4dp"
+        android:layout_marginVertical="2dp"
         android:background="@drawable/button_home"
         android:fontFamily="@font/sfuidisplatreguler"
         android:paddingVertical="16dp"
@@ -59,11 +59,12 @@
         app:iconGravity="top"
         app:iconPadding="2dp"
         app:iconSize="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/monitorButton"
-        app:layout_constraintEnd_toStartOf="@+id/profileButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/monitorButton"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/monitorButton"
-        app:layout_constraintTop_toTopOf="@+id/monitorButton" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.199"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/profileButton"
@@ -79,11 +80,11 @@
         app:iconGravity="top"
         app:iconPadding="2dp"
         app:iconSize="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/monitorButton"
+        app:layout_constraintBottom_toBottomOf="@+id/articleButton"
         app:layout_constraintEnd_toStartOf="@+id/childButton"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/articleButton"
-        app:layout_constraintTop_toTopOf="@+id/monitorButton" />
+        app:layout_constraintStart_toEndOf="@+id/monitorButton"
+        app:layout_constraintTop_toTopOf="@+id/articleButton" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/monitorButton"
@@ -93,18 +94,17 @@
         android:background="@drawable/button_home"
         android:fontFamily="@font/sfuidisplatreguler"
         android:paddingVertical="16dp"
-        android:text="Menu"
+        android:text="Monitor"
         app:cornerRadius="120dp"
         app:icon="@drawable/monitor_icon"
         app:iconGravity="top"
         app:iconPadding="2dp"
         app:iconSize="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/articleButton"
+        app:layout_constraintBottom_toBottomOf="@+id/articleButton"
+        app:layout_constraintEnd_toStartOf="@+id/profileButton"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.199" />
+        app:layout_constraintStart_toEndOf="@+id/articleButton"
+        app:layout_constraintTop_toTopOf="@+id/articleButton" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/childButton"
@@ -120,21 +120,21 @@
         app:iconGravity="top"
         app:iconPadding="2dp"
         app:iconSize="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/monitorButton"
+        app:layout_constraintBottom_toBottomOf="@+id/articleButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/profileButton"
-        app:layout_constraintTop_toTopOf="@+id/monitorButton" />
+        app:layout_constraintTop_toTopOf="@+id/articleButton" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="42dp"
         android:layout_height="23dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/childButton"
-        app:layout_constraintVertical_bias="0.172"
+        app:layout_constraintVertical_bias="0.078"
         app:srcCompat="@drawable/frame_27__1_" />
 
     <TextView
@@ -143,13 +143,25 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/sfuitext_semibold"
         android:text="Populer Menu"
-        android:textSize="24dp"
+        android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintHorizontal_bias="0.077"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/monitorButton"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintVertical_bias="0.077" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingVertical="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView8" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
