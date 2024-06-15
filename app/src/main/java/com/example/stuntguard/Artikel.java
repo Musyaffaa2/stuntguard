@@ -5,6 +5,7 @@ public class Artikel {
     private String title;
     private String content;
 
+
     public Artikel() {
         // Default constructor required for calls to DataSnapshot.getValue(Artikel.class)
     }
