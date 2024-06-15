@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".MonitorFragment">
+
+    <EditText
+        android:id="@+id/editTextusernameChild"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/form"
+        android:drawableLeft="@drawable/user_edit"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:fontFamily="@font/sfuidisplatreguler"
+        android:hint="Name"
+        android:inputType="text"
+        android:paddingHorizontal="24dp"
+        android:textColor="@color/white"
+        android:textColorHint="#CBD2E0"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+
+
+    <EditText
+        android:id="@+id/editTextWeightchild"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/form"
+        android:ems="10"
+        android:fontFamily="@font/sfuidisplatreguler"
+        android:hint="Weight"
+        android:inputType="text"
+        android:paddingHorizontal="24dp"
+        android:textColor="@color/white"
+        android:textColorHint="#CBD2E0"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextheightchild" />
+
+    <EditText
+        android:id="@+id/editTextheightchild"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/form"
+        android:ems="10"
+        android:fontFamily="@font/sfuidisplatreguler"
+        android:hint="Height"
+        android:inputType="text"
+        android:paddingHorizontal="24dp"
+        android:textColor="@color/white"
+        android:textColorHint="#CBD2E0"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextglLahirchild" />
+
+    <EditText
+        android:id="@+id/editTextglLahirchild"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/form"
+        android:drawableEnd="@drawable/calendar_2"
+        android:ems="10"
+        android:fontFamily="@font/sfuidisplatreguler"
+        android:hint="Date of Birth"
+        android:inputType="text"
+        android:paddingHorizontal="24dp"
+        android:textColor="@color/white"
+        android:textColorHint="#CBD2E0"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextgenderchild" />
+
+    <EditText
+        android:id="@+id/editTextgenderchild"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/form"
+        android:ems="10"
+        android:fontFamily="@font/sfuidisplatreguler"
+        android:hint="Gender"
+        android:inputType="text"
+        android:paddingHorizontal="24dp"
+        android:textColor="@color/white"
+        android:textColorHint="#CBD2E0"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextusernameChild" />
+
+    <EditText
+        android:id="@+id/editTextheadchild"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/form"
+        android:drawableEnd="@drawable/info"
+        android:ems="10"
+        android:fontFamily="@font/sfuidisplatreguler"
+        android:hint="Head Circumfence"
+        android:inputType="text"
+        android:paddingHorizontal="24dp"
+        android:textColor="@color/white"
+        android:textColorHint="#CBD2E0"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextheightchild" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLogin"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/buttonsecondary"
+        android:fontFamily="@font/sfuitext_semibold"
+        android:text="Add"
+        android:textColor="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextheadchild" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/group_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonLogin" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="120dp"
+        android:fontFamily="@font/sfuidiplat_bold"
+        android:text="My Child"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="39dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/frame"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
