@@ -37,6 +37,22 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currUser = mAuth.getCurrentUser();
+        updateUI(currUser);
+    }
+
+    private void updateUI(FirebaseUser user) {
+        if (user != null) {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Please SignIn First!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private void loginUser() {
         String email = emailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
