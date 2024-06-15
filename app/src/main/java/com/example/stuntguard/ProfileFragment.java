@@ -43,7 +43,8 @@ public class ProfileFragment extends Fragment {
     private DatabaseReference databaseReference;
     private StorageReference storageReference;
     private ImageView profileImageView;
-    private Button editProfileButton, favoriteButton, logoutButton;
+    private Button editProfileButton, logoutButton;
+//    private Button favoriteButton;
     private TextView nameTextView, heightTextView, weightTextView, medicalHistoryTextView;
 
     @SuppressLint("MissingInflatedId")
@@ -68,7 +69,7 @@ public class ProfileFragment extends Fragment {
 
         profileImageView = view.findViewById(R.id.profileImageView);
         editProfileButton = view.findViewById(R.id.editProfileButton);
-        favoriteButton = view.findViewById(R.id.favoriteButton);
+//        favoriteButton = view.findViewById(R.id.favoriteButton);
         logoutButton = view.findViewById(R.id.logoutButton);
         nameTextView = view.findViewById(R.id.nameTextView);
         heightTextView = view.findViewById(R.id.heightTextView);
@@ -93,13 +94,13 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        favoriteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), FavoriteActivity.class);
-//                startActivity(intent);
-            }
-        });
+//        favoriteButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                Intent intent = new Intent(getActivity(), FavoriteActivity.class);
+////                startActivity(intent);
+//            }
+//        });
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
