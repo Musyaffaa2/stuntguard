@@ -3,15 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/group_4"
+        android:padding="8dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="@string/back"/>
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:text="Edit Profile"
+            android:textColor="@android:color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <ImageView
         android:id="@+id/profileImageView"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:layout_marginTop="73dp"
+        android:layout_marginTop="110dp"
         android:src="@drawable/ic_baseline_person_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,9 +52,11 @@
 
     <Button
         android:id="@+id/chooseImageButton"
-        android:layout_width="350dp"
-        android:layout_height="46dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
         android:text="Choose Image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,9 +64,11 @@
 
     <EditText
         android:id="@+id/nameEditText"
-        android:layout_width="350dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
         android:hint="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,9 +76,11 @@
 
     <EditText
         android:id="@+id/heightEditText"
-        android:layout_width="350dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
         android:hint="Height"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,31 +88,38 @@
 
     <EditText
         android:id="@+id/weightEditText"
-        android:layout_width="350dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
         android:hint="Weight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heightEditText" />
 
+    <EditText
+        android:id="@+id/medicalHistoryEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:hint="Medical History"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weightEditText" />
+
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="350dp"
-        android:layout_height="46dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
         android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/medicalHistoryEditText" />
 
-    <EditText
-        android:id="@+id/medicalHistoryEditText"
-        android:layout_width="350dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="15dp"
-        android:hint="Medical History"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weightEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

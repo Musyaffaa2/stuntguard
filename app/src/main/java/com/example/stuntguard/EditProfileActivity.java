@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,9 +28,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -55,15 +54,22 @@ public class EditProfileActivity extends AppCompatActivity {
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
+        Toolbar toolbar = findViewById(R.id.topbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        ImageButton backButton = findViewById(R.id.back_button);
+        backButton.setOnClickListener(v -> finish());
+
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
-        String url = "https://stuntguard-1cd62-default-rtdb.asia-southeast1.firebasedatabase.app/";
+
+        String url = getResources().getString(R.string.urlDatabase);
         databaseReference = FirebaseDatabase.getInstance(url).getReference("users");
         storageReference = FirebaseStorage.getInstance().getReference("profile_pictures");
 
@@ -150,19 +156,18 @@ public class EditProfileActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(Uri uri) {
                                 String imageUrl = uri.toString();
-                                String names = name;
-                                String heights = height;
-                                String weights = weight;
-                                String medical = medicalHistory;
-                                String profilUrl = imageUrl;
-                                User user = new User (names,heights,weights,medical,profilUrl);
+                                Map<String, Object> user = new HashMap<>();
+                                user.put("name", name);
+                                user.put("height", height);
+                                user.put("weight", weight);
+                                user.put("medicalHistory", medicalHistory);
+                                user.put("profileImageUrl", imageUrl);
+
                                 databaseReference.child(uid).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
                                             Toast.makeText(EditProfileActivity.this, "Profile Updated", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(),ProfileFragment.class);
-                                            startActivity(intent);
                                             finish(); // Close activity and return to profile
                                         } else {
                                             Toast.makeText(EditProfileActivity.this, "Failed to update profile", Toast.LENGTH_SHORT).show();
@@ -200,6 +205,3 @@ public class EditProfileActivity extends AppCompatActivity {
         }
     }
 }
-
-
-

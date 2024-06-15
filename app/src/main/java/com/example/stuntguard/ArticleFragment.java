@@ -49,7 +49,8 @@ public class ArticleFragment extends Fragment implements ArtikelPreviewAdapter.O
         artikelView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         ViewCompat.setLayoutDirection(artikelView, ViewCompat.LAYOUT_DIRECTION_RTL);
 
-        firebaseDatabase = FirebaseDatabase.getInstance("https://stuntguard-1cd62-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        String url = getResources().getString(R.string.urlDatabase);
+        firebaseDatabase = FirebaseDatabase.getInstance(url);
         databaseReference = firebaseDatabase.getReference();
 
         loadBeritas();

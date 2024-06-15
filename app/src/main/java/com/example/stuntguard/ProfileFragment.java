@@ -8,12 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
@@ -49,9 +52,17 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
+        Toolbar toolbar = view.findViewById(R.id.topbar);
+        ((AppCompatActivity) requireActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity) requireActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        ImageButton backButton = view.findViewById(R.id.back_button);
+        backButton.setOnClickListener(v -> requireActivity().finish());
+
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
-        String url = "https://stuntguard-1cd62-default-rtdb.asia-southeast1.firebasedatabase.app/" ;
+
+        String url = getResources().getString(R.string.urlDatabase);
         databaseReference = FirebaseDatabase.getInstance(url).getReference("users");
         storageReference = FirebaseStorage.getInstance().getReference("profile_pictures");
 
