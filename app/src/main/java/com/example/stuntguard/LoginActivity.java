@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     private static final String TAG = "GoogleActivity";
-    private ImageView autologin;
+    private Button autologin;
     private static final int RC_SIGN_IN = 90001;
 
     private GoogleSignInClient mGoogleSignInClient;
@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_login);
-        autologin = findViewById(R.id.imageView6);
+        autologin = findViewById(R.id.buttonLogingoogle);
 
         mAuth = FirebaseAuth.getInstance();
 

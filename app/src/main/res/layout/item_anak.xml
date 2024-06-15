@@ -11,16 +11,14 @@
     android:gravity="center"
     android:background="@drawable/container_child">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageViewPhoto"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:src="@mipmap/abe_round"
-        android:layout_marginEnd="20dp"
-        android:contentDescription="Photo"
         android:scaleType="centerCrop"
-        android:gravity="center_vertical"/>
-
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_vertical"
+        android:src="@mipmap/abe_round" />
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"

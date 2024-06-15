@@ -91,50 +91,72 @@
         android:layout_marginEnd="24dp"
         android:background="@drawable/buttonsecondary"
         android:fontFamily="@font/sfuitext_semibold"
+        android:textAllCaps="false"
         android:text="Login"
         android:textColor="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextpassword" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLogingoogle"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/buttonprimary"
+        android:fontFamily="@font/sfuitext_semibold"
+        android:paddingHorizontal="24dp"
+        android:textAlignment="center"
+        android:text="Continue With Google"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.782"
-        app:srcCompat="@drawable/google_icon"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/sfuidisplatreguler"
         android:text="Don’t have an account?"
         android:textColor="#D9D9D9"
         android:textSize="12dp"
-        android:fontFamily="@font/sfuidisplatreguler"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewOr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/sfuidisplatreguler"
+        android:text="Or"
+        android:textColor="#D9D9D9"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLogingoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
     <Button
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="Sign Up here"
-        android:textSize="12dp"
+        android:layout_marginBottom="24dp"
         android:fontFamily="@font/sfuitext_semibold"
+        android:text="Sign Up here"
+        android:textColor="#FFE9CE"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="#FFE9CE"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
