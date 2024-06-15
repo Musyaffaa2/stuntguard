@@ -32,5 +32,7 @@
         <item name="cornerSizeBottomLeft">75dp</item>
         <item name="cornerFamilyBottomLeft">rounded</item>
     </style>
-
+    <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@color/primary</item>
+    </style>
 </resources>
