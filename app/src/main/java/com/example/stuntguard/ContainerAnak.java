@@ -13,12 +13,17 @@ public class ContainerAnak {
     private double lingkarKepala;
 
     private String imageUrl;
+    private int usia;
 
-    public ContainerAnak(int id, String name, String lastUpdated, String imageUrl) {
+    public ContainerAnak(int id, String name, String lastUpdated, String imageUrl, double beratBadan, double tinggiBadan, double lingkarKepala, int usia) {
         this.id = id;
         this.name = name;
         this.lastUpdated = lastUpdated;
         this.imageUrl = imageUrl;
+        this.usia=usia;
+        this.beratBadan=beratBadan;
+        this.lingkarKepala=lingkarKepala;
+        this.tinggiBadan=tinggiBadan;
     }
 
     public int getId() {
@@ -51,5 +56,37 @@ public class ContainerAnak {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public int getUsia() {
+        return usia;
+    }
+
+    public void setUsia(int usia) {
+        this.usia = usia;
+    }
+
+    public double getBeratBadan() {
+        return beratBadan;
+    }
+
+    public void setBeratBadan(double beratBadan) {
+        this.beratBadan = beratBadan;
+    }
+
+    public double getTinggiBadan() {
+        return tinggiBadan;
+    }
+
+    public void setTinggiBadan(double tinggiBadan) {
+        this.tinggiBadan = tinggiBadan;
+    }
+
+    public double getLingkarKepala() {
+        return lingkarKepala;
+    }
+
+    public void setLingkarKepala(double lingkarKepala) {
+        this.lingkarKepala = lingkarKepala;
     }
 }
