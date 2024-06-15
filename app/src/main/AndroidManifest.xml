@@ -26,7 +26,10 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:exported="true"/>
+            android:exported="false"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
         <activity
             android:name=".IsiBeritaActivity"
             android:exported="false" />
@@ -34,7 +37,7 @@
             android:name=".IsiArtikelActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".EditProfileActivity"
             android:exported="false" />
     </application>
 

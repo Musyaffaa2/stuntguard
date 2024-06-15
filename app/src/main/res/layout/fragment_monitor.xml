@@ -36,11 +36,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="560dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="120dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="24dp"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
