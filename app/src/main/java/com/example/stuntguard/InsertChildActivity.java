@@ -162,58 +162,100 @@ public class InsertChildActivity extends AppCompatActivity implements View.OnCli
 
 
 
-    private void saveChildData(String imageUrl) {
-        String name = etName.getText().toString();
-        String gender = etGender.getText().toString();
-        float beratBadan, tinggiBadan, lingkarKepala;
-        try {
-            beratBadan = Float.parseFloat(etWeight.getText().toString());
-            tinggiBadan = Float.parseFloat(etHeight.getText().toString());
-            lingkarKepala = Float.parseFloat(etHeadCircumference.getText().toString());
-        } catch (NumberFormatException e) {
-            Log.e(TAG, "Number format exception", e);
-            Toast.makeText(this, "Invalid number format", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        Child newChild = new Child(name, selectedDate, gender, beratBadan, tinggiBadan, lingkarKepala, age);
-        newChild.setChildImageUrl(imageUrl); // Set URL gambar ke objek Child
-
-        // Check apakah user sudah login
-        if (currentUser != null) {
-            // Dapatkan UID user yang sedang login
-            String uid = currentUser.getUid();
-            // Simpan data anak baru ke Firebase Database di bawah node UID user
-            databaseReference.child(uid).push().setValue(newChild)
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-                            Log.d(TAG, "Child added successfully");
-                            Toast.makeText(InsertChildActivity.this, "Child added successfully", Toast.LENGTH_SHORT).show();
-                            finish();
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.d(TAG, "Failed to add child", e);
-                            Toast.makeText(InsertChildActivity.this, "Failed to add child", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-        } else {
-            Toast.makeText(InsertChildActivity.this, "User not authenticated", Toast.LENGTH_SHORT).show();
-        }
+//    private void saveChildData(String imageUrl) {
+//        String name = etName.getText().toString();
+//        String gender = etGender.getText().toString();
+//        float beratBadan, tinggiBadan, lingkarKepala;
+//        try {
+//            beratBadan = Float.parseFloat(etWeight.getText().toString());
+//            tinggiBadan = Float.parseFloat(etHeight.getText().toString());
+//            lingkarKepala = Float.parseFloat(etHeadCircumference.getText().toString());
+//        } catch (NumberFormatException e) {
+//            Log.e(TAG, "Number format exception", e);
+//            Toast.makeText(this, "Invalid number format", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
+//
+//        Child newChild = new Child(name, selectedDate, gender, beratBadan, tinggiBadan, lingkarKepala, age);
+//        newChild.setChildImageUrl(imageUrl); // Set URL gambar ke objek Child
+//
+//        // Check apakah user sudah login
+//        if (currentUser != null) {
+//            // Dapatkan UID user yang sedang login
+//            String uid = currentUser.getUid();
+//            // Simpan data anak baru ke Firebase Database di bawah node UID user
+//            databaseReference.child(uid).push().setValue(newChild)
+//                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                        @Override
+//                        public void onSuccess(Void unused) {
+//                            Log.d(TAG, "Child added successfully");
+//                            Toast.makeText(InsertChildActivity.this, "Child added successfully", Toast.LENGTH_SHORT).show();
+//                            finish();
+//                        }
+//                    }).addOnFailureListener(new OnFailureListener() {
+//                        @Override
+//                        public void onFailure(@NonNull Exception e) {
+//                            Log.d(TAG, "Failed to add child", e);
+//                            Toast.makeText(InsertChildActivity.this, "Failed to add child", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//        } else {
+//            Toast.makeText(InsertChildActivity.this, "User not authenticated", Toast.LENGTH_SHORT).show();
+//        }
+//    }
+//
+//
+//    private Date parseDate(String dateString) {
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+//        try {
+//            return dateFormat.parse(dateString);
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
+private void saveChildData(String imageUrl) {
+    String name = etName.getText().toString();
+    String gender = etGender.getText().toString();
+    float beratBadan, tinggiBadan, lingkarKepala;
+    try {
+        beratBadan = Float.parseFloat(etWeight.getText().toString());
+        tinggiBadan = Float.parseFloat(etHeight.getText().toString());
+        lingkarKepala = Float.parseFloat(etHeadCircumference.getText().toString());
+    } catch (NumberFormatException e) {
+        Log.e(TAG, "Number format exception", e);
+        Toast.makeText(this, "Invalid number format", Toast.LENGTH_SHORT).show();
+        return;
     }
 
+    Child newChild = new Child(name, selectedDate, gender, beratBadan, tinggiBadan, lingkarKepala, age);
+    newChild.setChildImageUrl(imageUrl); // Set URL gambar ke objek Child
 
-    private Date parseDate(String dateString) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        try {
-            return dateFormat.parse(dateString);
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return null;
-        }
+    // Check apakah user sudah login
+    if (currentUser != null) {
+        // Dapatkan UID user yang sedang login
+        String uid = currentUser.getUid();
+        // Simpan data anak baru ke Firebase Database di bawah node UID user
+        databaseReference.child(uid).push().setValue(newChild)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Log.d(TAG, "Child added successfully");
+                        Toast.makeText(InsertChildActivity.this, "Child added successfully", Toast.LENGTH_SHORT).show();
+                        setResult(RESULT_OK); // Beri tahu bahwa data berhasil ditambahkan
+                        finish();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d(TAG, "Failed to add child", e);
+                        Toast.makeText(InsertChildActivity.this, "Failed to add child", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    } else {
+        Toast.makeText(InsertChildActivity.this, "User not authenticated", Toast.LENGTH_SHORT).show();
     }
+}
 
     private boolean validateForm() {
         boolean result = true;
@@ -273,20 +315,7 @@ public class InsertChildActivity extends AppCompatActivity implements View.OnCli
         datePickerDialog.show();
     }
 
-//    private int calculateAge(Date birthDate) {
-//        Calendar birthCalendar = Calendar.getInstance();
-//        birthCalendar.setTime(birthDate);
-//
-//        Calendar today = Calendar.getInstance();
-//
-//        int age = today.get(Calendar.YEAR) - birthCalendar.get(Calendar.YEAR);
-//
-//        if (today.get(Calendar.DAY_OF_YEAR) < birthCalendar.get(Calendar.DAY_OF_YEAR)) {
-//            age--;
-//        }
-//
-//        return age;
-//    }
+
 private int calculateAge(Date birthDate) {
     Calendar birthCalendar = Calendar.getInstance();
     birthCalendar.setTime(birthDate);
