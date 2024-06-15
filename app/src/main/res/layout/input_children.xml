@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary"
-    tools:context=".MonitorFragment">
+    tools:context=".InsertChildActivity">
 
     <EditText
         android:id="@+id/editTextusernameChild"
@@ -141,7 +141,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextheightchild" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonTambahAnak"
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -163,7 +163,7 @@
         android:layout_marginTop="32dp"
         android:src="@drawable/group_14"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttonLogin" />
+        app:layout_constraintTop_toTopOf="@+id/buttonTambahAnak" />
 
     <TextView
         android:id="@+id/textView9"
@@ -177,13 +177,14 @@
         android:textColor="@color/white"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toEndOf="@+id/back_btn"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView5"
+    <ImageButton
+        android:id="@+id/back_btn"
         android:layout_width="39dp"
         android:layout_height="31dp"
+        android:backgroundTint="@color/primary"
         android:layout_marginStart="44dp"
         android:layout_marginTop="32dp"
         android:src="@drawable/frame"

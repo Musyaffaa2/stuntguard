@@ -1,9 +1,11 @@
 package com.example.stuntguard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,6 +19,7 @@ public class MonitorFragment extends Fragment {
     private RecyclerView recyclerView;
     private ContainerAnakAdapter adapter;
     private List<ContainerAnak> containerAnakList;
+    private Button tambahanak;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -24,6 +27,7 @@ public class MonitorFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        tambahanak = view.findViewById(R.id.buttonTambahAnak);
 
         // Initialize your containerAnakList
         containerAnakList = new ArrayList<>();
@@ -35,6 +39,15 @@ public class MonitorFragment extends Fragment {
         // Initialize adapter with the list
         adapter = new ContainerAnakAdapter(getActivity(), containerAnakList);
         recyclerView.setAdapter(adapter);
+
+        // Set up click listener for the button to navigate to InsertChildActivity
+        tambahanak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), InsertChildActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

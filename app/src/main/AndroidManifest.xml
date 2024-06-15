@@ -46,6 +46,9 @@
         <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
+        <activity
+            android:name=".InsertChildActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
