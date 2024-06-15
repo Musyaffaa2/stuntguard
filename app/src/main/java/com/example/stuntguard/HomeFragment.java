@@ -85,7 +85,7 @@ public class HomeFragment extends Fragment implements MenuAdapter.OnMenuClickLis
         Intent intent = new Intent(getContext(), IsiMenuActivity.class);
         intent.putExtra("imageUrl", menu.getImageUrl());
         intent.putExtra("title", menu.getTitle());
-        intent.putExtra("content", menu.getRecipe());
+        intent.putExtra("resep", menu.getResep());
         startActivity(intent);
     }
 

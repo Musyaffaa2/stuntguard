@@ -3,14 +3,14 @@ package com.example.stuntguard;
 public class Menu {
     private String imageUrl;
     private String title;
-    private String recipe;
+    private String resep;
 
     public Menu() { }
 
-    public Menu(String imageUrl, String title, String recipe) {
+    public Menu(String imageUrl, String title, String resep) {
         this.imageUrl = imageUrl;
         this.title = title;
-        this.recipe = recipe;
+        this.resep = resep;
     }
 
     public String getImageUrl() {
@@ -29,11 +29,11 @@ public class Menu {
         this.title = title;
     }
 
-    public String getRecipe() {
-        return recipe;
+    public String getResep() {
+        return resep;
     }
 
-    public void setRecipe(String recipe) {
-        this.recipe = recipe;
+    public void setResep(String resep) {
+        this.resep = resep;
     }
 }

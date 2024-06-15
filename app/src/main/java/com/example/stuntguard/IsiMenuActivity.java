@@ -37,7 +37,7 @@ public class IsiMenuActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         String title = intent.getStringExtra("title");
-        String recipe = intent.getStringExtra("recipe");
+        String recipe = intent.getStringExtra("resep");
 
         Title.setText(title);
         textViewRecipe.setText(recipe);
